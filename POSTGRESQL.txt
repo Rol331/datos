@@ -1,0 +1,45 @@
+psql -U postgres -->ingresar desde consola 
+
+\l --> listar base de datos 
+\c NombredelaBasedeDatos; --> conectarse a un base de datos 
+\d --> Listar las tablas de la base de datos conectada
+\d+ NombredelaTabla --> ver la estructura de la tabla 
+\du -->listar usuario
+
+Ctrl+L--> Limpiar pantalla.
+
+///////////ver restricciones////////////////////////
+select *
+  from information_schema.table_constraints 
+  where table_name = 'alumnos';
+///////
+////fin de ver restricciones ///////////////
+
+
+crear base de datos posgre se hace fuera de psql createdb "nombre"
+
+--------------------ingresar al carpeta donde esta instaldo posgre-------
+C:\laragon\bin\postgresql\postgresql-9.6.15-1-windows-x64-binaries\bin
+
+sudo -u postgres psql
+--------------------------fin Postgres en windows----------------------
+
+--------------------------PostGre en Centos-----------------------------------
+   sudo -u postgres -i psql -->Ingresar como super usuario 
+   sudo -u (nombre de usuario) -i psql --> Ingresar como usario 
+  
+   sudo -u postgres -i createuser --interactive  -->Creando un rol de Posgre con el login de Centos.
+   sudo -u postgres -i creatdb usuario_actual -O usuario_actual --> creamos la base dedatos con el rol actual -O darlepermiso alusuario la base de datos
+   psql--> ingresar con el usuario actual
+   show hba_file; ---> saber donde esta el archivo pg_hba.conf(problemas de autentificacion ident ) este archivo controla: que host, sepueden conectar, como se autnetican
+                       tican los clientes, que nombres de usuario de posgres pueden usar, a que base de datos pueden acceder.
+					   
+   sudo -u postgres psql -c "ALTER USER nombre_usuario  PASSWORD 'contrseñacualquiera';" ---> cambiar contraeeña de de usuario postgres		   
+   
+---------------------------Fin de Postgres en Centos--------------------------
+
+rolandoramos2013
+[[[[[[[[[[[[fuente]]]]]]]]]]]]]]]]
+
+https://cirovladimir.wordpress.com/2014/11/04/ubuntu-crear-una-base-de-datos-postgresql-para-un-proyecto/
+https://www.nanotutoriales.com/como-crear-un-usuario-y-asignarle-permisos-en-postgresql

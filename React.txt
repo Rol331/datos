@@ -1,0 +1,58 @@
+npm install -g create-react-app -->instalar create react 
+
+create-react-app proyecto001  ---> crear proyecto
+
+npm start  --> ejecutamos el proyecto dentro de la carpeta proyecto001
+
+
+Archivos importantes 
+
+   index.html <- index.js  <-app.js
+
+
+Una restricción de JSX es que siempre los elementos HTML deben tener su marca de comienzo y fin, 
+y en el caso que solo tengan una etiqueta que es tanto de comienzo como fin debemos agregar el caracter '/':
+
+   <hr />
+Para definir valores a las propiedades de un elementos HTML mediante expresiones no debemos disponer las comillas. 
+Por ejemplo modifique el método render() y pruebe esto:
+
+   render() {
+    const buscadores=['http://www.google.com',
+                      'http://www.bing.com',
+                      'http://www.yahoo.com'];
+    return (
+      <div>
+        <a href={buscadores[0]}>Google</a><br />
+        <a href={buscadores[1]}>Bing</a><br />
+        <a href={buscadores[2]}>Yahoo</a><br />                
+      </div>
+    );
+  }
+
+
+Una restricción del método render es que siempre debe retornar 
+un elementos HTML que puede tener en su interior otros elementos anidados, 
+pero nunca dos elementos HTML hermanos, esto genera un error:
+
+
+
+Captura de Eventos 
+
+
+
+onClick
+onDoubleClick
+onMouseEnter
+onMouseLeave
+onMouseMove
+onKeyPress
+onKetUp
+onSubmit
+etc.
+
+
+
+ https://evanzu.com/systems/Control%20Asistencias/login.php?logout   
+usuario:Bryan
+contraseña:admin

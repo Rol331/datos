@@ -1,0 +1,57 @@
+/////////////////////////////////////////////////descargar drupal/////////////////////////////////////////
+
+composer create-project drupal-composer/drupal-project:8.x-dev (nombre de la carpeta)
+--stability dev (estable de la version dev) --no-interaction (que no ponga preguntas) --> crear proyecto
+
+///////////////////////////////////////////////Fin descargar drupal///////////////////////////////////
+////////////////////////////////////////Drupal Composer /////////////////////////////////////////////////
+
+ composer require drupal/pathauto  -->instalar modulos (cambiar el nombre nombre del modudlo para el ejemplo  pathauto)
+ composer remuve drupal/pathauto   --> desistala modulo
+ composer update -->actulizar drupal(para cambiar de version de drupal se tiene que cambiar el numero de version en composer.json
+  cambiar el nombre de la carpeta web en json e installer-path y despues cambiar el nombre de la carpeta y luego ingresar composer upadate
+
+////////////////////////////////////////Fin Drupal composer////////////////////////////////////////////////////////
+////////////////////////////////////////////// Drupal console//////////////////////////////////
+
+composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader -->instalar drupal console  
+OJO composer require drupal/console:~1.0 --prefer-dist --optimize-autoloader --sort-packages  --no-update -> si hay error con php unit
+OJO ejecutar el comando drupal dentro de este directorio (nombre del proyecto)\vendor\bin
+
+drupal list --> mostrar los comandos posibles
+--Generar codigo base para diferentes usos--
+  drupal generate:module
+  drupal generate:form
+  drupal generate:theme
+--    fin               ---
+drupal cache:rebuild -->vaciar cache
+drupal cr all -->vaciar cache
+--Descargar un modulo e instlarlo--
+  drupal module:download (nombre_modulo)
+  drupal modulo:install  (nombre_modulo)
+-------------- fin --------------------
+////////////////////////////////////instalar  drupal por  console /////////////////////////////////////////////////////////
+drupal site:install --> installar modo interactivo (para español escribimios spanish)
+
+-------------------------webbliografia--------------------------
+https://drupalconsole.com/articles/how-to-download-and-install-drupal-8-using-drupal-console
+-------------------------fin weblografia-----------------------
+
+///////////////////////////////////////Fin de instalar drupal por drupalconsole /////////////////////////////////////////////
+ ///////////////////////////////////////Manula por interfaz///////////////////////////////////////////////  
+ 
+ terminos 
+ nodos-> nombre de un url 
+ campo-> Un recuadro para poner titulo o imagens 
+ Taxonomia -> categorizar 
+ tag ->  palabras descriptivas de contenido
+ Regiones -> Zonad de la página web 
+ Bloques  -> contenido de la region(menus, formularios)
+ Articulos -> compuesto de un titulo y un texto se le pueden agregar imagenes 
+ Página básica --> secciones con contenido estatico (dirección, vision, mision)
+ Temas (diseños de plantilla) -> 
+ 
+ /////////////////////////////////////////////////////////////////////////////////////////
+ 
+ 
+ 

@@ -1,0 +1,1 @@
+mysqldump  -u root -p nombre_base_datos > nombre_copia_base_datos.sql

@@ -1,0 +1,87 @@
+
+
+/////////////////////////git init /////////////////////
+(git toma una foto de la version)
+
+los comit sirven para viajar al are de tiempo
+
+git ini --> dentro de la carpeta
+git satus -s --> indica si modifico el archivo
+git add archi --> agrega el archivo al temporal 
+git commit -m "mensaje" agreamos un comit 
+git add . -->agrega todos los archivos 
+git log --oneline ---> muestra todo los comit
+git reset --hard codigodelcomit 
+
+
+git commit --amend  -->puedes reescribir el ultimo commit para no generar otro se debe colocar antes git add . tambien le puedes cambiar el nombre "otro nombre" si lo crees conveniente
+git tag v0.0.1 -m "Primera versión, cambio" --> para indicar una version (una etiqueta del proyecto) ojo el cambio se hace en local para subirlo tienes que escribir git push origin master --tags
+git tag --> ves las versiones 
+git branch --> el listado de todas las ramas (estas son distintas del local y remoto)
+git branch nombre_rama  --> creacion de rama
+git show-branch  --> informacion mas detallada 
+git checkout nombre_rama --> pasarnos a otra rama
+git checkout -b otrarama  -->crear otra rama y pasarte 
+git git merge experimental  --> fusinar ramas(debe estar en la rama principal que quieres fucionar)
+git merge experimental -m 'merge con mensaje'
+
+git push -u origin nombre_rama--> publicar rama en el servidor
+git branch -d rama_a_borrar (opcion mas segura)
+git branch -D rama_a_borrar  --> forzar eliminado ( si has push o merge)
+git push origin --delete rama_a_borrar   --> borrar rama el servidor remoto
+
+git clone -b mybranch --single-branch git://sub.domain.com/repo.git  ---> clonar una rama especifica
+
+**************ejemplo************* 
+git log --oneline
+a541585 (HEAD -> master) tercer cambio
+69ed854 segundo cambio
+6d4fa61 cambio reciente
+/*si colocamos el id del commit del segundo cambio se borrara el 
+  tercer cambio */
+git reset --hard  69ed854
+git log --oneline
+69ed854 (HEAD -> master) segundo cambio
+6d4fa61 cambio reciente
+
+/* para restablecer el commit del tercer cambio ponemos el codigo
+del id del tercer cambio **/
+
+git reset --hard  a541585
+
+y se mostrara otra ves el commit del tercer cambio 
+git log --oneline
+a541585 (HEAD -> master) tercer cambio
+69ed854 segundo cambio
+6d4fa61 cambio reciente
+
+******************************************************************
+*******crear un repositorio en linea***********
+primero crear el repositorio en esta caso en github
+desopues ejecutar los comandos
+git remote add origin https://github.com/rolando35/ejemplo.git
+git push -u origin master
+
+luego realizar un cambio en un archivo y ejecutar los comandos 
+
+git add .
+git commit -m "Nombre cambio"
+git push
+
+      ---solucionar error error: src refspec master does not match any--
+      git init
+      git add .
+      git commit -m 'message'
+      git push -u origin master 
+
+*****************fin de repositorio en line**************************
+
+*******************crear un archvio gitignore ***********************
+ hacer anticlick en el archivo con la tecla shift pulsada 
+ abrir cmd (terminal)
+ escribir en la terminal: ren gitignore.txt .gitignore
+******************** fin archivo gitignore*******************************
+
+
+
+CHRISTY KEE THE BLACK ALLEY 02H

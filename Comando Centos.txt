@@ -1,0 +1,21 @@
+Saber la version de tomcat ---> hostnamectl 	; tambien rpm --query centos-release
+ver puertos funcionando ---> netstat -ntpl 
+actualizar centos ---> sudo yum -y update
+
+-----------------java-----------------------------
+javac -cp nombre_odbc.jar: archivo.java --> compilar archivo de conexion junto con el odbc 
+java   -cp nombre_odbc.jar: archivo  ---> Ejecutar el archivo de conexion junto con el odbc 
+  ps -f -u postgres ---> enumera los procesos de postgres
+sudo netstat -ltnp | grep postgres   ---> ver la direccion ip y el puerto de escucha de postgres
+
+sudo vi /var/lib/pgsql/data/pg_hba.conf   ---> cambiamos el parametro ident por md5 para solucionar el errro 2800
+---------------fin java-----------------------
+------------jsp--------------
+sudo systemctl restart tomcat
+
+sudo chown tomcat: /opt/tomcat/ -R  --> cambiar de usuario directorio
+
+sudo vi /opt/tomcat/apache-tomcat-9.0.31/webapps/davani/index.jsp --> editar directamente archivo si ingresar ala carpaeta
+
+Ojo para la conexion de base de datos se debe colocar le jdbc.jar de postgre en la carpeta lib del directorio de tomcat y luego resetera los demonios y tomcat
+--------------fin de jsp--------- 

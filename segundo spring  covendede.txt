@@ -1,0 +1,95 @@
+------------------------------------Primera Anotaciones-----------------------------------
+
+GraphQL y su framework Apollo, mongose 
+Aws icloud, implmentacion Jenkins,
+atlas(Cloud-hosted)
+
+Kubernetes Icloud, 
+
+implementaciond de Docker
+reac 
+mongo db
+
+
+mocha 
+chajis 
+redux 
+
+-----------------------
+
+  Dominio
+  servidor 
+  ssl 
+  Cambios (html)
+  Ese formulario()
+
+---------------------------   
+   
+ 
+h02960631
+
+
+
+
+
+--------------------------------------Fin primera Anotaciones-------------------------------
+Fronte End 
+
+net js ---> lo mismo que angular 
+
+enviaromente ----> las variables de entorno 
+playground --> hacer consultas ,id graph 
+voyayer --->
+
+
+type orm ----> maneja las base dats
+
+Un configugrado basdico 
+
+git flow 
+
+
+passport ---->libreria para login redes sociales
+
+indes.ts
+
+mutacionees --> es para insertar dato, eliminar , actulizar.
+
+node nest 
+
+yarn ---> primero  
+
+
+
+
+
+
+-----------------------------frondEnd-----------------------------------
+
+laazy loader 
+
+emotion 
+emotion themin 
+
+
+redux.saga
+npm init 
+
+
+constantenes ---> funciones y peticiones 
+
+handle post ---> similar al fetch pero da restricones o errores al consultar endpoint 
+layout --> el diseño 
+
+pages ---> 
+
+
+---------------------------------Entorno ---------------------------------
+
+sonar cube 
+
+amplfy  console 
+
+deilibery continuos 
+
+open shift 

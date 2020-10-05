@@ -1,0 +1,92 @@
+https://a2plcpnl0087.prod.iad2.secureserver.net:2083/logout/?locale=es
+
+wh52o55jo1zx
+#qXs:T]M^1/G
+
+
+shared ip :107.180.2.121
+last loign ip:168.194.101.34
+Colore
+#ff5555
+#37acf4
+   https://covende.com/wp-content/uploads/2020/08/cropped-CoVende-1.png
+
+
+ if(typeof fbq === 'undefined') {
+             !function(f,b,e,v,n,t,s)
+             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+             if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+             n.queue=[];t=b.createElement(e);t.async=!0;
+             t.src=v;s=b.getElementsByTagName(e)[0];
+             s.parentNode.insertBefore(t,s)}(window, document,'script',
+             'https://connect.facebook.net/en_US/fbevents.js');
+             fbq('init', '632212554372581');
+             fbq('track', 'PageView');
+           
+              }
+              else {
+                fbq('track', '{{fBPixelType}}');
+              }
+
+              <noscript><img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=632212554372581&ev=PageView&noscript=1"
+        /></noscript>
+
+<script>
+          fbq('track', 'InitiateCheckout', {
+            value: 1,
+            currency: 'pen',
+          });
+        </script>
+
+
+URL:https://integ-panel.culqi.com/#/login
+Usuario:info@evanzu.com
+Contraseña: Covende2020@
+
+Saludos.
+
+--------//////mercado pago//////-----
+https://www.mercadopago.com.pe/settings/account/credentials/sandbox?id=2699465371010144
+info@covende.com
+ecomerce991188119
+https://www.mercadopago.com.pe/developers/es/guides/plugins/woocommerce/integration/
+
+------///// AWS amazon ////----
+
+https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2#
+rolando@evanzu.com
+Trampera@@22
+
+Jenkis despues de instalación 
+contraseña:747923d31d4a433086b6920b5e3c628e
+usuario jenkis:covende
+contraseña jenkis:covende2020
+
+url jenkis http://18.189.28.187:8080/
+
+
+
+--------////fin///////---------
+
+/////////covende mail/////
+
+info@covende.com
+991188119Aa
+//////
+////////Artecola /////////
+
+
+Busca la tienda entera aquí
+
+
+logos
+las categorias s 
+
+SSLIDER 
+
+
+linkear bien el boton 
+
+dimesion del form

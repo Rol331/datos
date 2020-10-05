@@ -1,0 +1,115 @@
+
+
+wordpress
+Congifuracion
+Entradas y pagianas 
+Organizacion de contenido --> se debe colocar una categoria al contenido/ se puede hacer por etiquetas tambien 
+                          --> las paginas se organizan por arbol de gerarquia
+						  
+Mostrar contenido       ----> se accede en la opcion apariencia para la url base se debe difinir la etiqueta base (definir categoria y enlace )
+
+                             en las paginas dependera de la gerarquia establecida en la opcion pages	
+
+plugin
+
+Framworks 	 --> los temeas de genesis tiene n un alta configuracion, el framework grantry --> tiene una personalizacion alta , Divi tiene un constructor el tema canvas						 
+				 pueden generar varios themas hijos y modificar la apariencia del thema sin programar 
+				 
+constrotes de contendio --> son plugin que sirven para editar cualquiere thema,--> page builder 						  
+
+
+childthems   -->duplicar-la carpeta de del thema y colocar dos archivos (style.css y function.php en el function crear un funcion que llame los stylos del thema padre) https://decodecms.com/crear-un-child-theme-en-wordpress-de-manera-correcta/
+
+
+Cambiar textos de traduccion--> usar el plugin translate, en el caso de cambiar la forma de traduccion esta en el core de wordpres
+
+Formulario de contacto-->  usar plug-in contac form 7 
+
+Agregar codigo   --> usar plugin codesinpes (https://decodecms.com/agregar-codigo-a-tu-sitio-sin-usar-functions-php/) para ya no agregarlo directamente en function
+
+Hooks en wordpres  --> Es la forma de hacer cambios al codigo de wordpres pero sin cambiar el codigo original (https://decodecms.com/los-hooks-wordpress-usarlos/)
+
+Custom post type --> Generara una opcion a partir de un articulo
+
+Taxonomias --> se puede añadir categorias y etiqueta como pais y ciudades (https://decodecms.com/aprende-a-usar-taxonomias-en-wordpress/) 
+
+añadir una nueva ubicación -->  se debe agrear codigo a al funcion.php del tema (https://decodecms.com/anadir-una-nueva-ubicacion-de-menu-a-un-theme-wordpress/)
+
+Añadir una zona widgedts  --> agrega un espacio al tema (https://decodecms.com/anadir-una-nueva-zona-de-widgets-a-un-theme-wordpress/)
+
+shortcodes --> restrigir contenido a usuarios.
+
+insertar javascript --> se añade codigo al function.php  y tambien crar el archivo.js
+
+////////////////////////////////////////////
+
+cambiar opciones de pantalla wordpres: con plugin
+
+  https://decodecms.com/eliminar-opciones-de-pantalla-en-wordpress/
+
+
+ otro es cambiar en functions.php en el directorio de la plantilla 
+
+
+function dcms_remove_screen_options() {
+	if( ! current_user_can('manage_options') ) {
+		return false;
+	}
+	return true;
+}
+
+add_filter('screen_options_show_screen', 'dcms_remove_screen_options');
+
+
+---------------------- como agregar stylos css a wordpress----------------------------------------
+<?
+  function nombre(){
+    //el array se pone el nombre de una clase o id, las versiones son para refrescar el cache  
+  wp_register_style('estilos_personales',get_template_directory_uri()"/css/estilos-personales.css,array(),'1.0');
+  wp_enqueue_sytle('estilos_personales');
+ }
+
+add-action('wp_enqueue_scripts','nombre');
+
+-------------------------------ingresar javascrippp------------------------
+
+
+add_action("wp_enqueue_scripts", "dcms_insertar_js");
+
+function dcms_insertar_js(){
+    
+    wp_register_script('miscript', get_stylesheet_directory_uri(). '/js/script.js', array('jquery'), '1', true );
+    wp_enqueue_script('miscript');
+
+
+---------------------------colocar varialbes para que el usuairo lo puede ingresar----------------
+function social_aulainformativa($atts){
+  $args = shortcode_atts(array(     //esta funcion captura todo los shortcodes
+     'facebook' => 'http://facebook.com',
+     'twiter'   => 'http//twiter.com',
+      'google'   => 'http//plus.google.com'
+   ),$atts);
+
+     $uf=$args["facebook"];
+     $ut=$args["twiter"];
+     $ug=$args["google"];
+
+  $facebook ="<a href='".$uf."'>facebook</a>";
+  $twitter ="<a href='".$ut."'>facebook</a>";
+  $facebook ="<a href='".$ug[google]."'>google</a>";
+
+$social = $faceboo."".$twiter."".$google;
+return $social;
+}
+
+add_shortcode("social_aulaformativa", "social_aulainformativa");
+
+------------------------------------------Colocar partes de un pagian en otra --------------------------------------
+
+              $post = get_page_by_path('marcas');
+              $content = apply_filters('the_content', $post->post_content);
+              echo $content;
+
+
+
+

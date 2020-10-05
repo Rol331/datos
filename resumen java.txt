@@ -1,0 +1,39 @@
+--------Resumen Java-----
+####Definicion#####
+Una interface es un protocolo que permite la comunicacion entre dos clases(analogo a los eventos )
+
+ATRIBUTO ESTATICO ---> no cambia si las istancias tienen diferentes valores y se le puede llamar con el nombre de la clase y la instancia 
+CLASE ESTATICA ---> similar a una funcion (esta debe siempre estar dentro de un clase) esta no se instancia.
+ENUM -->  es una clase especial que el constructor debe ser privado para no crear objetos se le puede instanciar si new 
+FINAL--> se para un valor constante
+CLASE GENERICA --->Sirven para almacenar diferentes tipos de datos pero sin utilizar variasl pilas 
+COLECCIONES --> Es un API que nos brinda alternativas de almacenamiento (esta en le paquete util)
+EXEPCIONES VERIFICADAS --> el programa debe virificar si o si el try cath 
+THROW ---> TRYCATCH en una sola linea.
+CLASE ABSTRACTA ---> No se puede instanciar
+CLASES FINALES --> Son clases selladas
+METODOS FINALES --> sellan los metodos para que las subclases no la puedan usar ( no se puede reescribir el metodo cuando se herencia )
+POLIMORFISMO -->permite a llamar metodos con mombres iguales pero con distintas clases 
+SUBCLASE --> es una clase que hereda una superclase
+INTERFACE ---->Es como un metod libre sin classes la clase se le invoca por inmplements 
+CLASES ANONIMAS --->	
+ANOTACIONES --->son un forma de agregar metadatos al codigo fuente
+##########
+ establecer el pat en la carpeta (para compilar y ejecutar en esa elugar)---> set path=%path%;C:\Archivos de programa\Java\jdk1.8.0_221\bin
+------------------------fin Resumen Java----------------------------------------------------------
+
+------------------------------Resumen Jsp------------------------------------
+<%  aqui codigo java %>
+
+<%@ page import = "paquete.archivo, java.util.ArryList"%>   ---> llamar clases java
+jstl --> librerias para enriqueser etiquetas html en jsp (esenecial para manejar vistas)
+
+---------------------------------fin resumen jsp--------------------------------------------------
+
+------------------------------------resumen spring ----------------------------------------------
+spring container --> controlar las dependencias
+
+Patron factoria --->
+pojos -- clase simple
+programacion orientada aspectos ------
+--------------------------------------fin de resumen spring-----------------------------------------

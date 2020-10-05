@@ -1,0 +1,127 @@
+	las directivas son atributos html simpre empieza V
+
+v-model -->asocia el data de la etiqueta al modelo(javascript) de datos (v-model="dato") tambien se usa para cargar la variable
+v-if
+v-else
+v-for
+v-show -->funcio es similar if pero su utiza solo display none de css
+v-bind  -->Con el framework Vue podemos enlazar nuestro modelo de datos con una o más propiedades en línea mediante la directiva v-bind.
+     v-bind:style="{'font-size':tamañoFuente+'px', 'color': colorParrafo}
+    v-bind:class="{faltastock: articulo.stock===0}
+
+  resumido -->:
+              //   Eventos  //
+v-on --> captura todos los eventos
+  resumido @
+v-on:click
+v-on:dblclick
+v-on:mouseenter
+v-on:mouseleave
+v-on:mousemove
+v-on:keypress --> Cuando se presiona una tecla 
+v-on:keyup    --> Cusnfo se suelta una tecla
+v-on:keyup.enter --> usado para utlizar la telcla enter 
+<form v-on:submit.prevent="agregarArticulo">   --->utilizar submit del boton del formulario
+etc
+                 /// modelo  ////
+
+var app=new Vue({
+       el: '#aplicacion',
+       data:{ 
+       },
+       methods: {
+       },
+       computed: {
+       }
+   })
+              ////////ciclo de vida//////////
+
+
+new Vue({
+    data: {
+      nombre: 'juan'
+    },
+    created: function () {
+      console.log('El atributo nombre almacena : ' + this.nombre);  se ejecuta cuando la pagina se incia 
+    }
+  })
+
+beforeCreated
+created
+beforeMouth
+mounted
+beforeUpdate
+update
+beforeDestroy
+destroyed
+
+data ---> se declara las varables similar a las propiedades de una clase
+
+methods-->  son espcios en java en para realizar funciones o tambien los metodos de una clase 
+
+computed -->La tercer propiedad llamada computed nos permite definir propiedades que surgen de procesos sobre otras propiedades. Las propiedades computadas son realmente métodos.
+            Si bien se puede definir un método que haga lo mismo Vue trabaja cacheando (almacenando) el valor de la propiedad computada y logrando mayor eficiencia en nuestro código.
+
+          ////////Componentes/////
+
+ .- Sirven para emcapsular el código (se utiliza como etiqueta html)
+
+ compoennte con propiedaades
+
+   <hola-mundo>
+     <hola-mundo idioma="ingles"></hola-mundo>
+    <hola-mundo idioma="castellano"></hola-mundo>
+      
+Vue.component('hola-mundo', {
+    props: ['idioma'],
+    template: `<div>    ----> sirve para ingresar html al componente
+                  <p v-if="idioma=='castellano'">Hola mundo</p>
+                  <p v-if="idioma=='ingles'">Hello world</p>
+              </div>`
+  })
+
+  var app=new Vue({
+    el: '#aplicacion'
+  })
+
+
+solt -->   sirve para definir los elementos de un teplate
+slot-scope--> sirve para difivir lo slot 
+
+$emit-->  (this.$emit('decremento') --> pasar el valos a la propiedad del componente.)
+
+---se pueden anidar componentes 
+
+   <component v-bind:is="nombre de la componente"></component> similar a un v-if o v-show
+            Vue cli
+     -----------------------
+comandos 
+----------
+ npm install -g @vue/cli---> instalar cli 
+crear proyecto -->  vue create nombre_proyecto
+npm run serve--> arracar un proyecto en local
+space es elegir las features 
+preset --> configuracion 
+
+
+todo componente lleva siempre la entiqueta <template>
+
+en los stylos scope sirve para que las clases y funciones css no solo se limita al presente archivo
+
+vue component = export default
+asset en esa carpeta se coloca images
+
+Babel --> transforma para que el navegador lo entiende 
+
+antajo para el nivel de directirio ../../assets por @/assetes
+
+en la carpeta componente dentro de style el atributo scope indica que los estilos solo se aplican para ese componente(página)
+////////////inerfaz grafica vue clie//////////
+vue ui
+////////////////////////////////////////////////
+/////////////////////////////////////vutify///////////////////////////////////////
+vue create nombre_aplicacion
+vue add vuefity
+
+/////////////////////////////////////////////////////////////////////////////////////
+  

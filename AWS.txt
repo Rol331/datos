@@ -1,0 +1,212 @@
+  {{{{{{{{{{{             crear una cuenta en amazon }}}}}}}}}}}}}
+selecinar maquina virtual
+colocar el nombre de la maquina virtual 
+seleccionar ubuntu (puedes elegir cualquier distro)
+añadir http y https 
+añadir 30 gb de espacio
+descargar la llave https
+hay que guardar la ip el dns 
+
+Public DNS (IPv4): ec2-18-190-24-48.us-east-2.compute.amazonaws.com
+IPv4 Public IP: 18.190.24.48
+Private DNS: ip-172-31-17-33.us-east-2.compute.internal
+Private IPs : 172.31.17.33
+
+{{{{{{{{{{{{  fin de crear cuenta amazon pero servira para arrancar el servidor }}}}}}}}}}}}}}}}}}
++++++++++++++++++++++++++  windows (putty)+++++++++++++++++++++++++
+
+abrimos puttykeygen 
+
+ dentro de puttkeygen seleccionar la llave descargada
+selecciones llave privada ejecutamos y guardamos la llave creada en aptge
+
+abrimos putty 
+seleccionamos seccion en el primer campo  colocamos el nombre de la maquina virtual mas arrobba ye le dns generado en amazon awt
+Luego selccions ssh 
+selecionamos auth y cargamos la llave generado con putty gen 
+adicionalmente en sseccion podemos crear una alias para ingresar de forma directa por ssh 
+
++++++++++++++++++++++++++ fin window +++++++++++++++++++++++++++++++++++
+***************************Servidor web**********************************
+sudo apt-get update
+sudo apt-get upgrade ---> despues seleccines Y
+                         instalar servidor Nginx
+
+sudo apt-get install nginx
+sudo ufw allow 'Nginx HTTP' 
+sudo ufw status 
+                          instalr mysql(opcional)
+sudo apt-get install mysql-server
+sudo mysql_secure_installation  -->Y
+                          instalr Posgres
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+                           instalar PHP
+
+sudo apt-get install php-fpm php-psql  --> varia si mysql ( sudo apt-get install php-fpm php-mysql ) 
+
+                         Configurar Ngix
+sudo nano /etc/nginx/sites-available/default
+///copiar y remplazar 
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.php index.html index.htm index.nginx-debian.html;
+
+    server_name server_domain_or_IP;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+    }
+
+    location ~ /\.ht { 
+        deny all;
+    }
+}
+
+sudo nginx -t -->probar si hay errores 
+sudo systemctl reload nginx  -->recargar Ngnix
+                  Crear un archivo para probar configuración
+	
+<?php 
+  phpinfo();
+
+guardas los datos 
+y despus pegas la siguiente url en el navegador:
+http://dominio_del_servidor_o_IP/info.php
+
+si ves la pagina FElCIDADES \(^o^)/
+
+sudo rm /var/www/html/info.php  --> si desesa eliminas el archivo
+
+
+     ~~~~~~~~~~~~~~~~~~~instalacion node ~~~~~~~~~~~~~~~~~~
+$ sudo apt-get update && sudo apt-get upgrade -y   # (opcional)
+$ sudo systemctl status nginx    #  Revisar el status de Ngnix
+$ sudo systemctl start nginx     #  Arrancar nginx (opcional)
+
+$ sudo apt-get update
+$ sudo apt-get install nodejs
+$ sudo apt-get install npm
+
+$ node --version #verificar
+$ npm --version  #verificar
+$ sudo nano /etc/nginx/sites-available/default
+
+server {
+    listen 80;
+    server_name your_domain.com;
+    location / {
+        proxy_pass http://private_ip_address:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+     }
+}
+
+
+ ~~~~~~~~~~~~~~~~~~~~Fin de instalacion node  ~~~~~~~~~~~~~~~~
+
+ ~~~~~~~~~ combinacion node y laravel (laravel en una subcarpeta)~~~~~~~~~
+  
+  
+$ sudo nano /etc/nginx/sites-available/default
+
+
+     
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+        #root /var/www/html/appguia/public;
+
+        index index.php index.html index.htm.nginx-debian.html;
+
+        #server_name server_domain_or_IP;
+         server_name app.evanzu.com www.app.evanzu.com ;
+
+        location / {
+
+       ###### ##Configuracion proxy inverso para node.js ##########
+
+              proxy_pass http://172.31.17.33:8080;
+              proxy_http_version 1.1;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection 'upgrade';
+              proxy_set_header Host $host;
+              proxy_cache_bypass $http_upgrade;
+
+        }
+
+
+        location /appguia {
+
+          alias /var/www/html/appguia/public;
+
+            try_files $uri $uri/ @laravelTest;
+      #     try_files $uri $uri/ /index.php$is_args$args;
+            
+
+
+           location ~ \.php$ {
+
+             location ~ \.php$ {
+
+                    include fastcgi_params;
+                    fastcgi_param SCRIPT_FILENAME $request_filename;
+                    fastcgi_pass   unix:/run/php/php7.3-fpm.sock;
+
+
+           }
+
+      }
+
+         location @laravelTest {
+          rewrite /appguia/(.*)$ /appguia/index.php?/$1 last;
+     }
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/app.evanzu.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/app.evanzu.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+
+     ~~~~~~~~~~~~~~~~~~~~Fin de configuración node y larvel  ~~~~~~~~~~~~~~~~
+
+****************************fin servidor web *******************************
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[fuentes]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+ https://www.youtube.com/watch?v=MrLzp2VxguU
+https://www.youtube.com/channel/UCQB9RHGyWBj1KPSKAKqC1ZQ
+https://www.digitalocean.com/community/tutorials/como-instalar-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04-es
+https://www.digitalocean.com/community/tutorials/como-instalar-y-utilizar-postgresql-en-ubuntu-16-04-es
+https://gist.github.com/cham11ng/f1d614b07492080c7be288ae1d56abae
+
+actulizar php a 7.2
+https://medium.com/@klvst3r/actualizar-php-7-0-a-7-2-en-ubuntu-16-04-e647356af4ef
+pdo posgre php
+https://parzibyte.me/blog/2019/06/24/extension-pdo-postgresql-php-linux-ubuntu/
+comando para parar refrescar Ngnix
+https://www.cyberciti.biz/faq/nginx-restart-ubuntu-linux-command/
+
+
+https://us-east-2.console.aws.amazon.com/ec2/v2/home?region=us-east-2#Instances:sort=instanceState
+
+
+989872749-->azul(posible francia)

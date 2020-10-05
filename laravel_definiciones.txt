@@ -1,0 +1,2 @@
+  facades -> son mecanismos para realizar una clase estatica(desorrollar un subsitema) y luego utlizarla en otra 
+  midleware -> Es un filtro para rutas

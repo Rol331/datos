@@ -1,0 +1,10 @@
+docker search (nombre de la imagen)  -->buscar imagenes 
+----ejemplo buscar version----
+docker search ubuntu:16.02
+--------fin------------------
+
+docker pull (nombre de la imagen) -->descarga la imagen
+docker image -->lista las imagenes descargadas
+dockcer run (nombre de la imagen)--> ejecuta la imagen
+docker ps -->muestra que imagen se esta ejecutando 
+cokerps ps -a --> muestra las imagenes que se ejecuto

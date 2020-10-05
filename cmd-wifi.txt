@@ -1,0 +1,13 @@
+netsh wlan show all
+netsh wlan show networks mode =BsSid
+net view
+
+
+netsh wlan show profile name=EVANZU key=clear   --> ver la contraseña wifi
+
+USUARIO: admin  CLAVE:  Claro2014
+
+
+
+
+
