@@ -1,1 +1,5 @@
 mysqldump  -u root -p nombre_base_datos > nombre_copia_base_datos.sql
+
+LTER TABLE  `usuario` ADD  `priviliegio` INT( 1 ) NOT NULL AFTER  `pasword`
+
+ALTER TABLE  `usuario` CHANGE  `pasword`  `pasword` VARCHAR( 225 ) CHARACTER SET utf8 COLLATE utf8_spanish_ci NULL DEFAULT NULL
