@@ -1,0 +1,29 @@
+React 
+
+Jsx es un formato impuesto poor los creadores de react 
+
+
+Import react   —> es importante importar la classe 
+
+No se puede ejeucatar react en etiquetas hermanas d
+
+Nose puede poner class si className 
+Tampoco id son tabIndx
+
+
+Estados de un componente 
+
+Hay un atributo fundamental que puede tener toda componente en React donde almacenamos valores que luego en forma dinámica se actualizan en el método render() mediante expresiones.
+La propiedad state se debe inicializar en el constructor, por ejemplo:
+    this.state = {
+      numero: 0
+    }
+Podemos definir en state todos los datos que van a variar durante la ejecución de la aplicación y queremos que se actualicen en pantalla.
+
+
+
+ Propiedad 
+
+
+El elemento fundamental que tenemos para comunicarnos con una componente son las propiedades. Mediante las propiedades podemos enviar datos a la componente para que los muestre.
+
