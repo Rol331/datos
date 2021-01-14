@@ -1,0 +1,99 @@
+        ----presupuesto ----------
+
+ir a panel de facturacion (parte superior derecha /nombre del proyecto)
+hay colocar el monto maximo / la fecha del comienzo / y el porcentaje para enviar la alerta
+
+
+----------regiones y zona de disponibiliad--------------
+
+   una region tiene zonas pero estas zonas estan aisladad entre si , s3 no trabaja con regiones es global 
+   
+   
+   
+   --------------------IAM (SEGURIDAD)----------------------
+   
+   
+   Los usuario, grupos y roles estan restringidos por politicas(json) , usa el formato SAML
+     Un solo usuario de IAM por Persona fisica
+     uno solo rol por IAM por aplicacion 
+     Las credenciales de IAM nunca deben ser compartidas
+     Nunca escribas las credenciales de IAM en codigo y no subas las credenciales a tu repositorio
+     Nunca uses la cuenta root excepto para la configuracion inicial
+     Nunca uses las credenciales raices(Root) 
+     
+     ----------------Blindar aws------------------
+     
+     mfa autnetificar de forma segura usando un dispositivo (celular)
+     
+     se tiene que ir al recurso seguridad e identidad y selecinar el menu IAM las
+     (en la parte del menus izquierso hay opciones para crear usuario , grupos y roles tambien politicas)opciones para configurar son :
+          Eliminar las claves de acceso raiz
+          activar MFA en la cuenta raiz
+          crear usuarios de IAM individuales 
+          utliziar grupos para asignar permisos
+          aplicar una politica de contraseñas IAM
+          
+          para cambiar la contraseña:ingresamos al listado de usario , y cambiarla en administrar accesos a la consola 
+          
+          politicas --> hay una lista de permisos predifinidos para asignar a tu usuario
+          
+          ----------------------EC2-----------------------------
+             Rentar máquinas virtuales  (EC2)
+             Almacenamiento de data en discos virutales (EBS)
+             Distribucion de cargas a través de màquinas virutales (ELB)
+             Escalar los servicios usando un grupo autoescalador (ASG)
+             
+             Balaseador de carga sirve para no saturar la instacia con las peticiones de los usarios (distribuir las peticiones en la instancias)
+             
+             Ela autoescalamiento perminte habilitar la creacion de instacias de forma automatica
+             instancia = EC2 
+             
+             ---------------------ssh---------------------------
+             
+             en window  se hace con putty 
+             
+             unix version
+             
+             ssh -i archvibal.pem ubuntu@12.34.12.345 ///bastaria con eso para ingresar
+             
+             
+             ---------Grupos de seguridad---------
+             
+             
+             son un muro que se pone a una instancia 
+             
+             sin un grupo de seguriad la instacia esta aislada del todo el mundo 
+             
+             bastion --es una red prviada solo por ssh se ingresa puerto 22
+             web puert0 80 
+             
+             se puede combianar una instancia 
+             
+             . Puedd ser adjuntado a multiples instacias
+               Pertenece a una región o una combinacion VPC
+               Vive "fuera" del EC2 : si el tráfico está bloqueando, la instacia EC2  no lo vera
+               todo trafico de salida autorizado por defecto 
+               
+               es bueno mantener un grupo de seguridad por el ssh
+               si tu aplicacion no es accecible (time out) es un problema del grupo de seguridad
+               situ aplicacon da un error de "conexion denegada" entonces es un error de la aplición no esta lanzada
+               
+               
+               
+               
+               te quedaste en la 15 pasate  a las 16
+               
+               
+             
+             
+             
+             
+             
+              
+          
+          
+    
+   
+   
+
+
