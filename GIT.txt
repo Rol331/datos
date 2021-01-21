@@ -15,7 +15,7 @@ git reset --hard codigodelcomit
 
 
 git commit --amend  -->puedes reescribir el ultimo commit para no generar otro se debe colocar antes git add . tambien le puedes cambiar el nombre "otro nombre" si lo crees conveniente
-git tag v0.0.1 -m "Primera versión, cambio" --> para indicar una version (una etiqueta del proyecto) ojo el cambio se hace en local para subirlo tienes que escribir git push origin master --tags
+git tag v0.0.1 -m "Primera versiÃ³n, cambio" --> para indicar una version (una etiqueta del proyecto) ojo el cambio se hace en local para subirlo tienes que escribir git push origin master --tags
 git tag --> ves las versiones 
 git branch --> el listado de todas las ramas (estas son distintas del local y remoto)
 git branch nombre_rama  --> creacion de rama
@@ -31,6 +31,10 @@ git branch -D rama_a_borrar  --> forzar eliminado ( si has push o merge)
 git push origin --delete rama_a_borrar   --> borrar rama el servidor remoto
 
 git clone -b mybranch --single-branch git://sub.domain.com/repo.git  ---> clonar una rama especifica
+
+
+git clone urlproyecto --branch develop --> clonar una rama especifica(verision luis)
+git pull --> actualizar un proyecto descargado 
 
 **************ejemplo************* 
 git log --oneline
