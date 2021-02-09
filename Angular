@@ -3,7 +3,7 @@ Comandos angular
 ng new proyecto001.  --> Crear Proyecto
 ng serve -o ---> arrancar un servidor
 
-
+ng generate component nombrecomponente ---> crear un componente 
 
 
 
