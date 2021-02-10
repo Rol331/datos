@@ -4,7 +4,7 @@ ng new proyecto001.  --> Crear Proyecto
 ng serve -o ---> arrancar un servidor
 
 ng generate component nombrecomponente ---> crear un componente 
-
+ng generate module elementos ---> crear un modulo 
 
 
 Dentro de las dos llaves abiertas y cerradas Angular nos permite efectuar una operación:
