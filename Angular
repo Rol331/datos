@@ -8,7 +8,9 @@ ng generate module elementos ---> crear un modulo
 
 ng generate component elementos/dado ---> crear un componente en un determinado modulo 
 
- ng generate service lista 
+ ng generate service lista ----> crear una Lista
+ 
+ ng generate pipe letras. ---> crear pipes
 
 Dentro de las dos llaves abiertas y cerradas Angular nos permite efectuar una operación:
 
