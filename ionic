@@ -1,0 +1,17 @@
+ ionic start myApp blank ---> crear un nuevo proyecto
+ 
+ ionic start myApp tabs
+ 
+ ionic start myApp sidemenu ---> por defecto ionic puede crear dos tipos de proyecto es como una ayuda
+ 
+  ionic platform add <nombre-de-la-plataforma>. ---> compilar nuestro proyecto para una plataforam especial
+  
+  ionic platform. ---> ver el listado de las plataforma instaladas 
+  
+  ionic serve --> ejecutar un servidor en local
+  
+  
+  ionic build <PLATFORM> --> generar un ejcutble directamente 
+    
+   inic g c --> crea la carpeta y el componenete
+    
