@@ -14,4 +14,6 @@
   ionic build <PLATFORM> --> generar un ejcutble directamente 
     
    inic g c --> crea la carpeta y el componenete
+   
+   ionic g m <backend>   --> crea un modulo en la carpeta indicada
     
