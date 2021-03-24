@@ -17,3 +17,4 @@
    
    ionic g m <backend>   --> crea un modulo en la carpeta indicada
     
+   ionic g s /nombrecarpeta/nombre  ---> cre un servicio 
