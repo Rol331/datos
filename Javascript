@@ -26,3 +26,66 @@ Funcion anonima
   console.log(tres);
 }(1, 2, 3));
 
+
+Funcionas flecha 
+
+Es una forma de reduicir al sintaxis del código 
+
+Ejemplo 1
+var sumaEs5 = function(x, y) {
+    return x + y;
+};
+const sumaEs6 = (x, y) => { return x + y };
+
+ejemplo 2
+ejemplo con un parametro 
+var cuadradoEs5 = function(x) {
+    return x * x;
+};
+
+const cuadradoEs6 = (x) => { return x * x };
+se puede escribir sin llaves 
+ const cuadradoEs6 = x => { return x * x };
+
+ejemplo 3 funcion sin parametro 
+
+var holaEs5 = function() {
+    alert('Hola');
+};
+
+const holaEs6 = () => { alert('Hola'); };
+
+
+ejemplo 3 
+retornando un valor literal 
+
+var agregarIdEs5 = function(id, nombre) {
+    return {
+        id: id,
+        nombre: nombre
+    }
+};
+
+const agregarIdEs6 = (id, nombre) => ({ id: id, nombre: nombre });
+
+Ejemplo 4
+
+invocando un array 
+
+const automoviles = [
+    { name:'Renault Megane', precio:16000 },
+    { name:'Toyota Corolla', precio:17000 },
+    { name:'Honda Civic', precio:18000 }
+];
+
+
+var precios = automoviles.map(function(automovil) {
+    return automoviles.precio;
+});
+
+console.log(precios); // [16000, 17000, 18000]
+
+const precios = automoviles.map(automovil => automovil.precio);
+
+
+
