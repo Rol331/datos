@@ -14,3 +14,15 @@ function alertFinished(){
 
 doHomework('math', alertFinished);
 
+
+Funcion anonima
+ Es una funcion que no tiene nombre y se autoejecuta no es necesario atuo ejecutarle 
+ va ordenado entre parentesisi y al final de la llaves sev vuelve a colocar parentesis para decirel a javascript que se ejecuta la funcion en esos parenteisis 
+ tambien se le puede pasar parametros como el ejemplo
+ 
+(function (uno, dos, tres) {
+  console.log(uno);
+  console.log(dos);
+  console.log(tres);
+}(1, 2, 3));
+
