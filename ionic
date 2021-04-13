@@ -18,3 +18,18 @@
    ionic g m <backend>   --> crea un modulo en la carpeta indicada
     
    ionic g s /nombrecarpeta/nombre  ---> cre un servicio 
+   
+   ionic build --producto ---> generar todos los archvios de producción 
+   npx cap add android    ---> generar proyecto para android stuido 
+   npx cap add ios        ----> gnerar proyecto para xcode 
+
+   npx cap open ios --> abrir poyecto en xcode
+   npx cap open android --> abrir proyecto en androidstudio
+   
+   npm install -g @ionic/cli native-run  --->instalar libreria para cambios en linea
+   
+   ionic cap run android -l --external 
+   
+   ionic cap run ios -l --external
+   
+   
