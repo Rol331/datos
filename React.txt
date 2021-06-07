@@ -49,10 +49,54 @@ onMouseMove
 onKeyPress
 onKetUp
 onSubmit
-etc.
+etc
+
+/////////////////////////////////////////////////////////ejemplo de react clases vs hooks ////////////////////////////////////////////////////////
+
+
+import React, { Component } from 'react'
+
+class Contador extends Component {
+  state = { count: 0 } // inicializamos el state a 0
+
+  render () {
+    const { count } = this.state // extraemos el count del state
+
+    return (
+      <div>
+        <p>Has hecho click {count} veces</p>
+        { /* Actualizamos el state usando el método setState */ }
+        <button onClick={() => this.setState({ count: count + 1 })}>
+          Haz click!
+        </button>
+      </div>
+    )
+  }
+}
 
 
 
- https://evanzu.com/systems/Control%20Asistencias/login.php?logout   
-usuario:Bryan
-contraseña:admin
+// importamos useState, el hook para crear un state en nuestro componente
+import React, { useState } from 'react'
+
+function Contador() {
+  // useState recibe un parámetro: el valor inicial del estado (que será 0)
+  // y devuelve un array de dos posiciones:
+  //  la primera (count), tiene el valor del estado
+  //  la segunda (setCount), el método para actualizar el estado
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>Has hecho click {count} veces</p>
+      { /* actualizamos el state al hacer click con setCount */ }
+      <button onClick={() => setCount(count + 1)}>
+        Haz click!
+      </button>
+    </div>
+  )
+}
+
+
+
+
